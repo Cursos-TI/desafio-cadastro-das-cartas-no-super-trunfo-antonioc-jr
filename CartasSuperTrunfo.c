@@ -16,7 +16,8 @@ int main() {
     float pib1, pib2; //Armazena o PIB das cidades correspondentes
     int pontosTuristicos1, pontosTuristicos2; // Armazena a quantidade de pontos turísticos de cada cidade
     float densidadePopulacional1, densidadePopulacional2; // Variáveis para armazenar a Densidade populacional em hab/km²
-
+    float densidadePopulacional1, densidadePopulacional2; // Variáveis para armazenar a Densidade populacional em hab/km²
+    float perCapita1, perCapita2; // Variáveis para armazenar o PIB per Capita em reais
 
     // Coleta e armazena as informaçoes da Carta 1
     printf("\nCarta 1\n"); // Título da carta do qual os dados serão coletados (Carta 1)
@@ -52,6 +53,16 @@ int main() {
     scanf("%f", &pib2);
     printf("Digite a quantidade de pontos turísticos:\n");
     scanf("%d", &pontosTuristicos2);
+
+    //Calculo Densidade Populacional:
+    // Calculo PIB per Capita
+
+    densidadePopulacional1 = populacao1 / areaKm1;
+    perCapita1 = (pib1 * 1000000000) / (float)populacao1;
+ 
+    densidadePopulacional2 = populacao2 / areaKm2;
+    perCapita2 = (pib2 * 1000000000) / (float)populacao2;
+
 
     return 0;
 }
