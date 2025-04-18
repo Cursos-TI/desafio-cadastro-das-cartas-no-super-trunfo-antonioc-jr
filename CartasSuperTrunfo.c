@@ -10,14 +10,14 @@ int main() {
     //Variáveis
     char estado1, estado2; // Variáveis para armazenas os dados das cartas (A-H)
     char codigo1[4], codigo2[4]; // Armazena o código da cidade (ex: A01, B02)
-    char cidade1[20], cidade2[20]; // Armazena o nome da cidade correspondetes
+    char cidade1[20], cidade2[20]; // Armazena o nome da cidade correspondete
     unsigned long int populacao1, populacao2; // Armazena a população das cidades correspondentes
     float areaKm1, areaKm2; // Armazena a área em Km² das cidades correspondentes
     float pib1, pib2; //Armazena o PIB das cidades correspondentes
     int pontosTuristicos1, pontosTuristicos2; // Armazena a quantidade de pontos turísticos de cada cidade
     float densidadePopulacional1, densidadePopulacional2; // Variáveis para armazenar a Densidade populacional em hab/km²
-    float densidadePopulacional1, densidadePopulacional2; // Variáveis para armazenar a Densidade populacional em hab/km²
     float perCapita1, perCapita2; // Variáveis para armazenar o PIB per Capita em reais
+    float somaPoder1, somaPoder2; // Variaveis para calcular os "poderes" das carta 1 e 2
 
     // Coleta e armazena as informaçoes da Carta 1
     printf("\nCarta 1\n"); // Título da carta do qual os dados serão coletados (Carta 1)
@@ -62,6 +62,17 @@ int main() {
  
     densidadePopulacional2 = populacao2 / areaKm2;
     perCapita2 = (pib2 * 1000000000) / (float)populacao2;
+
+    somaPoder1 = ((float)populacao1 + areaKm1 + pib1 + pontosTuristicos1 + perCapita1) + (1 / densidadePopulacional1);
+    somaPoder2 = ((float)populacao2 + areaKm2 + pib2 + pontosTuristicos2 + perCapita2) + (1 / densidadePopulacional2);
+ 
+     // Exibir Comparações entre as cartas
+     printf("\nCarta 1 - (%s): %d\n", cidade1, populacao1);
+     printf("\nCarta 2 - (%s): %d\n", cidade2, populacao2);
+     if(populacao1 > populacao2){
+        printf("Resultado: Carta 1 (%s) venceu!\n", cidade1);
+     } else{
+        printf("Resultado: Carta 2 (%s) venceu!\n", cidade2);
 
 
     return 0;
